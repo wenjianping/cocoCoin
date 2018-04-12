@@ -1,12 +1,12 @@
-package com.cplatform.surf.fcoin.entity;
+package com.cplatform.surf.coco.entity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import lombok.Data;
 
-import com.cplatform.surf.fcoin.Contants;
-import com.cplatform.surf.fcoin.util.ByteUtil;
+import com.cplatform.surf.coco.Contants;
+import com.cplatform.surf.coco.util.ByteUtil;
 
 /**
  * 交易对象 Title. <br>

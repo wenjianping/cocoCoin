@@ -1,4 +1,4 @@
-package com.cplatform.surf.fcoin.miner;
+package com.cplatform.surf.coco.miner;
 
 
 /**

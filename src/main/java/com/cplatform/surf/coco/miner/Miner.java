@@ -1,6 +1,6 @@
-package com.cplatform.surf.fcoin.miner;
+package com.cplatform.surf.coco.miner;
 
-import com.cplatform.surf.fcoin.util.HashUtil;
+import com.cplatform.surf.coco.util.HashUtil;
 
 /**
  * 挖矿

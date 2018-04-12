@@ -1,8 +1,8 @@
-package com.cplatform.surf.fcoin.valid;
+package com.cplatform.surf.coco.valid;
 
-import com.cplatform.surf.fcoin.entity.Block;
-import com.cplatform.surf.fcoin.miner.Difficulty;
-import com.cplatform.surf.fcoin.util.HashUtil;
+import com.cplatform.surf.coco.entity.Block;
+import com.cplatform.surf.coco.miner.Difficulty;
+import com.cplatform.surf.coco.util.HashUtil;
 
 /**
  * 对区块数据进行校验

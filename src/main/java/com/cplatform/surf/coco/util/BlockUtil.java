@@ -1,4 +1,4 @@
-package com.cplatform.surf.fcoin.util;
+package com.cplatform.surf.coco.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.cplatform.surf.fcoin.Contants;
-import com.cplatform.surf.fcoin.entity.Block;
-import com.cplatform.surf.fcoin.entity.Tran;
+import com.cplatform.surf.coco.Contants;
+import com.cplatform.surf.coco.entity.Block;
+import com.cplatform.surf.coco.entity.Tran;
 
 public class BlockUtil {
 

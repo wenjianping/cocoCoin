@@ -1,4 +1,4 @@
-package com.cplatform.surf.fcoin;
+package com.cplatform.surf.coco;
 
 
 public class Contants {

@@ -1,4 +1,4 @@
-package com.cplatform.surf.fcoin.util;
+package com.cplatform.surf.coco.util;
 
 import java.io.ByteArrayOutputStream;
 import java.security.Key;

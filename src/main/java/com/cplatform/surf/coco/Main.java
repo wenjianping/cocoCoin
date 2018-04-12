@@ -1,11 +1,11 @@
-package com.cplatform.surf.fcoin;
+package com.cplatform.surf.coco;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cplatform.surf.fcoin.entity.Block;
-import com.cplatform.surf.fcoin.entity.Tran;
-import com.cplatform.surf.fcoin.util.BlockUtil;
+import com.cplatform.surf.coco.entity.Block;
+import com.cplatform.surf.coco.entity.Tran;
+import com.cplatform.surf.coco.util.BlockUtil;
 
 public class Main {
 
