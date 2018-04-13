@@ -27,8 +27,9 @@ public class Main {
 		tran.setInputCount(1);
 		tran.setOutputCount(1);
 		tran.setPublicKey("000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000".getBytes());
-		tran.setSignLength(3);
-		tran.setSign("abc");
+//		tran.setSignLength(3);
+		tran.setSign("abcasdfaaaaaaaaaaaaaaaaaaaaaaa");
+		tran.setValidHash("00000000000000000000000000000000");
 		tran.setTimestamp(12345);
 		tran.setVersion(1);
 		tran.processLength();
