@@ -19,6 +19,12 @@ public class HashUtil {
 		String encName = "SHA-256";
 		return encrypt(content.getBytes(), encName);
 	}
+	
+	public static String hash64(byte[] content) {
+		String encName = "SHA-256";
+		return encrypt(content, encName);
+	}
+
 
 	public static String md5(String content) {
 		String encName = "MD5";

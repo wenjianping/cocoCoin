@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.cplatform.surf.coco.Contants;
 import com.cplatform.surf.coco.entity.Block;
+import com.cplatform.surf.coco.entity.BlockChain;
 import com.cplatform.surf.coco.entity.Tran;
 
 public class BlockUtil {
@@ -162,4 +163,11 @@ public class BlockUtil {
 		
 		return tran;
 	}
+
+	public static Block getPreBlock(Block block) {
+	    if(block.getHeight() == 0){
+	    	return null;
+	    }
+	    return BlockChain.getInstance().getMainBlock(block.getHeight() -1);
+    }
 }

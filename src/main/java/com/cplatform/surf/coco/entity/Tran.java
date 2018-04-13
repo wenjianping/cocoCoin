@@ -7,6 +7,7 @@ import lombok.Data;
 
 import com.cplatform.surf.coco.Contants;
 import com.cplatform.surf.coco.util.ByteUtil;
+import com.cplatform.surf.coco.util.HashUtil;
 
 /**
  * 交易对象 Title. <br>
@@ -37,7 +38,7 @@ public class Tran {
 	/**
 	 * 交易hash
 	 */
-	String hash;
+	String hash = "0000000000000000000000000000000000000000000000000000000000000000";
 
 	/**
 	 * 输入数量(4位)
@@ -85,6 +86,14 @@ public class Tran {
 		this.length =  Contants.TRAN_HEAD_LENGTH +signLength;
 		return this.length;
 	}
+	
+	
+	public void proessHash(){
+		
+		byte[] contentByte = contentByte();
+		
+		this.setHash(HashUtil.hash64(contentByte));
+	}
 
 	public byte[] toByte() {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -94,6 +103,25 @@ public class Tran {
 
 			bos.write(ByteUtil.int2bytes(version));
 			bos.write(hash.getBytes());
+			
+			bos.write(contentByte());
+			
+		}
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return bos.toByteArray();
+	}
+	
+	/**
+	 * 不包含版本，长度、hash三个字段的内容
+	 * @return
+	 */
+	public byte[] contentByte(){
+		ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+		try {
 			
 			bos.write(ByteUtil.int2bytes(inputCount));
 			bos.write(ByteUtil.int2bytes(outputCount));
