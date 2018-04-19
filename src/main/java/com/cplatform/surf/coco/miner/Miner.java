@@ -1,5 +1,7 @@
 package com.cplatform.surf.coco.miner;
 
+import com.cplatform.surf.coco.entity.Block;
+import com.cplatform.surf.coco.entity.BlockChain;
 import com.cplatform.surf.coco.util.HashUtil;
 
 /**
@@ -19,13 +21,34 @@ import com.cplatform.surf.coco.util.HashUtil;
 public class Miner {
 
 	public int mine() {
-		String preHash = "1123131322111";
-		int height = 3;
+		
+		BlockChain blockChain = 	BlockChain.getInstance();
+		int height = blockChain.getHeight();
+		
+		String preHash = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+		if(height > 0){
+			Block block = blockChain.getMainBlock(height);
+			byte[] contentByte = block.toByte();
+			preHash = HashUtil.hash64(contentByte);
+		}
+//		 preHash = "1123131322111";
+//		int height = 3;
 		int i = mine(preHash, height);
+		
+		createBlock(i);
 
 //		System.out.println("hash result:" + HashUtil.hash128((preHash + i).getBytes()) + ",prehash:" + preHash + ",difficulty:" + difficulty);
 		return i;
 	}
+
+	/**
+	 * 查找到随机数，构建block
+	 * @param i
+	 */
+	private void createBlock(int i) {
+	    // TODO Auto-generated method stub
+	    
+    }
 
 	/**
 	 * 挖矿
@@ -33,7 +56,7 @@ public class Miner {
 	 * @param height
 	 * @return
 	 */
-	private int mine(String preHash, int height) {
+	public int mine(String preHash, int height) {
 		int i = 0;
 		String diffPrefix = new Difficulty().getPrefix(height);
 		System.out.println("zero prefix:" + diffPrefix);

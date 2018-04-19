@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cplatform.surf.coco.entity.Block;
+import com.cplatform.surf.coco.entity.BlockChain;
 import com.cplatform.surf.coco.entity.Tran;
+import com.cplatform.surf.coco.miner.Miner;
 import com.cplatform.surf.coco.util.BlockUtil;
 
 public class Main {
@@ -44,7 +46,10 @@ public class Main {
 		System.out.println(b2);
 		System.out.println(b.equals(b2));
 		
+		BlockChain blockChain = 	BlockChain.getInstance();
 		
+		Miner miner = new Miner();
+		miner.mine();
 		
 	}
 }
