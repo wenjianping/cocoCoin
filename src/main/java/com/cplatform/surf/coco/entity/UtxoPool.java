@@ -22,12 +22,38 @@ public class UtxoPool {
 
 	Map<String,Utxo> utxoMap = new HashMap<>(); 
 	
+	private static UtxoPool utxoPool = new UtxoPool();
+	
+	static{
+		init();
+	}
+	
+	public static UtxoPool getInstance(){
+		return utxoPool;
+	}
+	
+	/**
+	 * 初始化utxo对象池
+	 */
+	private static void init() {
+	    // TODO Auto-generated method stub
+	    
+    }
+
 	public Utxo getUtxo(String utxo){
 		Utxo cacheUtxo = utxoMap.get(utxo);
 		if(cacheUtxo != null){
 			return cacheUtxo;
 		}
 		return null;
+	}
+	
+	public void add(Utxo utxo){
+		utxoMap.put(utxo.getUtxo(), utxo);
+	}
+	
+	public void remove(String utxo){
+		utxoMap.remove(utxo);
 	}
 	
 }
